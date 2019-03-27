@@ -1,11 +1,20 @@
 ﻿namespace Lands.ViewModels
 {
+    using Models;
     using System;
     using System.Collections.Generic;
     using System.Text;
 
     public class MainViewModel
     {
+        #region Properties
+        public List<Land> LandsList
+        {
+            get;
+            set;
+        }
+        #endregion
+
         #region ViewModels
         public LoginViewModel Login
         {
@@ -32,6 +41,7 @@
             this.Login = new LoginViewModel();
         }
         #endregion
+
 
         #region Singleton
         private static MainViewModel instance;

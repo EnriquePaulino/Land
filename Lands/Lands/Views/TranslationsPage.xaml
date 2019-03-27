@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Lands.Views.TranslationsPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Icon="ic_action_translate"
     Title="Translation">
     <ContentPage.Content>
         <StackLayout>
