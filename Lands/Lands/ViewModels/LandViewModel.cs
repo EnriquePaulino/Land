@@ -9,6 +9,8 @@
     {
         #region Attributes
         private ObservableCollection<Border> borders;
+        private ObservableCollection<Currency> currency;
+        private ObservableCollection<Language> languages;
         #endregion
 
 
@@ -24,6 +26,18 @@
             get { return this.borders; }
             set { this.SetValue(ref this.borders, value); }
         }
+
+        public ObservableCollection<Currency> Currency
+        {
+            get { return this.currency; }
+            set { this.SetValue(ref this.currency, value); }
+        }
+
+        public ObservableCollection<Language> Languages
+        {
+            get { return this.languages; }
+            set { this.SetValue(ref this.languages, value); }
+        }
         #endregion
 
 
@@ -32,6 +46,8 @@
         {
             this.Land = land;
             this.LoadBorders();
+            this.Currency = new ObservableCollection<Currency>(this.Land.Currencies);
+            this.Languages = new ObservableCollection<Language>(this.Land.Languages);
         }
         #endregion
 
