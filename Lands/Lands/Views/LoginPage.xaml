@@ -1,21 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:i18n="clr-namespace:Lands.Helpers"
     x:Class="Lands.Views.LoginPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Title="Login">
+    Title="{i18n:Translate Login}">
     <ContentPage.Content>
         <ScrollView
             BindingContext="{Binding Login}">
             <StackLayout
                 Padding="5">
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="Large"
-                    HorizontalOptions="Center"
-                    Text="Login">
-                </Label>
                 <Image
                     Source="onu"
                     WidthRequest="200">
@@ -30,8 +25,7 @@
                     <Label
                         Grid.Row="0"
                         Grid.Column="0"
-                        Text="E-Mail"
-                        TextColor="Black"
+                        Text="{i18n:Translate EMail}"
                         VerticalOptions="Center">
                     </Label>
                     <Entry
@@ -39,21 +33,20 @@
                         Grid.Column="1"
                         Keyboard="Email"
                         Text="{Binding Email, Mode=TwoWay}"
-                        Placeholder="Enter your email...">
+                        Placeholder="{i18n:Translate EmailPlaceHolder}">
                     </Entry>
                     <Label
                         Grid.Row="1"
                         Grid.Column="0"
-                        Text="Password"
-                        TextColor="Black">
+                        Text="{i18n:Translate Password}"
+                        VerticalOptions="Center">
                     </Label>
                     <Entry
                         Grid.Row="1"
                         Grid.Column="1"
-                        IsPassword="True"
-                        Text="{Binding Password,Mode=TwoWay}"
-                        Placeholder="Enter your password..."
-                        VerticalOptions="Center">
+                        IsPassword="true"
+                        Text="{Binding Password, Mode=TwoWay}"
+                        Placeholder="{i18n:Translate PasswordPlaceHolder}">
                     </Entry>
                 </Grid>
                 <ActivityIndicator
@@ -66,24 +59,24 @@
                     VerticalOptions="CenterAndExpand">
                     <Label
                         HorizontalOptions="StartAndExpand"
-                        Text="Rememberme in this device"
-                        TextColor="Black"
+                        Text="{i18n:Translate Rememberme}"
                         VerticalOptions="Center">
                     </Label>
                     <Switch
-                        IsToggled="{Binding IsRememberd, Mode=TwoWay}"
+                        IsToggled="{Binding IsRemembered, Mode=TwoWay}"
                         HorizontalOptions="End">
                     </Switch>
                 </StackLayout>
                 <Label
                     HorizontalOptions="Center"
-                    Text="Forgot your password?"
-                    TextColor="Blue">
-                    
+                    Text="{i18n:Translate Forgot}"
+                    TextColor="Blue"
+                    VerticalOptions="CenterAndExpand">
                 </Label>
                 <StackLayout
                     Margin="40,0"
-                    Orientation="Horizontal">
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
                     <Button
                         BackgroundColor="Navy"
                         BorderRadius="23"
@@ -91,7 +84,7 @@
                         HeightRequest="46"
                         HorizontalOptions="FillAndExpand"
                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                        Text="Login"
+                        Text="{i18n:Translate Login}"
                         TextColor="White">
                     </Button>
                     <Button
@@ -99,7 +92,8 @@
                         BorderRadius="23"
                         HeightRequest="46"
                         HorizontalOptions="FillAndExpand"
-                        Text="Register"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Text="{i18n:Translate Register}"
                         TextColor="White">
                     </Button>
                 </StackLayout>
@@ -109,8 +103,10 @@
                     VerticalOptions="EndAndExpand">
                     <Image
                         Source="facebook_logo"
-                        WidthRequest="100"
-                        VerticalOptions="End">
+                        WidthRequest="100">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding LoginFacebookComand}"/>
+                        </Image.GestureRecognizers>
                     </Image>
                     <Image
                         Source="twitter_logo"

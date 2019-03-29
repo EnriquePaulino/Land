@@ -34,5 +34,12 @@
     <string>Lands</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+	<array>
+		<string>es</string>
+		<string>pt</string>
+	</array>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+
 </dict>
 </plist>
