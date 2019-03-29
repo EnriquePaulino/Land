@@ -53,4 +53,8 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Resources\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Lands.Domain\Lands.Domain.csproj" />
+  </ItemGroup>
 </Project>
